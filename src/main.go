@@ -9,11 +9,10 @@ import (
 	"strings"
 )
 
+// struct for the matrix file
 type SparceMatrixFile struct {
-	row int
-	col int
-
-	// data inform of map consiting of 2 ints keys and another int as value
+	row  int
+	col  int
 	data map[[2]int]int
 }
 
