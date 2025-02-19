@@ -24,6 +24,7 @@ func SpaceMatrix(rows int, cols int) *SparceMatrixFile {
 	}
 }
 
+// loading data function form the files
 func LoadDataFromFile(filePath string) (*SparceMatrixFile, error) {
 	file, err := os.Open(filePath)
 	if err != nil {
@@ -51,6 +52,7 @@ func LoadDataFromFile(filePath string) (*SparceMatrixFile, error) {
 		}
 	}
 
+	// loop throught the file
 	for scanner.Scan() {
 		line := strings.TrimSpace(scanner.Text())
 		if line == "" {
@@ -99,7 +101,6 @@ func addition(file1 *SparceMatrixFile, file2 *SparceMatrixFile) (*SparceMatrixFi
 	for key, value := range file1.data {
 		result.data[key] = value
 	}
-
 	for key, value := range file2.data {
 		if existingValue, exists := result.data[key]; exists {
 			result.data[key] = existingValue + value
